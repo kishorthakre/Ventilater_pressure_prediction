@@ -1,0 +1,36 @@
+<html>
+<head>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h3>Ventilator Pressure Prediction</h3>
+
+<div>
+  <form action="{{ url_for('predict') }}" method="POST">
+    <label for="r">R (5-50)</label>
+    <input type="text" id="r" name="r">
+    <br>
+    <label for="c">C(10-50)</label>
+    <input type="text" id="c" name="c">
+    <br>
+    <label for="time_step">time_step (0-2.94)</label>
+    <input type="text" id="c_gain" name="c_gain">
+    <br>
+    <label for="u_in">u_in (0-100)</label>
+    <input type="text" id="u_in" name="u_in">
+    <br>
+    <label for="u_out">u_out (0/1)</label>
+    <input type="text" id="u_out" name="u_out">
+    <br>
+    <br>
+    <input type="submit" value="Submit">
+  </form>
+      {{ prediction_text }}
+</div>
+</body>
+</html>
+
+
+
+
+
